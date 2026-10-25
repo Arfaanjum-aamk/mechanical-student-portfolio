@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4b2e24">
+  <title>Mechanical Engineering | Student Portfolio</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark">ME</div>
+    <div class="brand-copy"><strong>Mechanical Engineering</strong><span>Mini-Project Portfolio</span></div>
+    <div class="top-actions"><span id="user-label" class="user-label"></span><button id="logout-btn" class="btn btn-quiet hidden">Sign out</button></div>
+  </header>
+
+  <main>
+    <section id="auth-view" class="auth-layout">
+      <div class="hero">
+        <p class="eyebrow">STUDENT PROJECT WORKSPACE</p>
+        <h1>Build your project story.<br><em>Stage by stage.</em></h1>
+        <p class="hero-copy">Record your design decisions, calculations, CAD evidence, manufacturing, testing and improvements in one organised portfolio.</p>
+        <div class="feature-list">
+          <div><span>01</span><p><b>One personal workspace</b><small>Your portfolio is saved to your account.</small></p></div>
+          <div><span>02</span><p><b>11 project stages</b><small>From need definition to documented improvement.</small></p></div>
+          <div><span>03</span><p><b>Evidence-led design</b><small>Keep notes, references and results together.</small></p></div>
+        </div>
+      </div>
+      <div class="auth-card">
+        <div class="tabs"><button class="tab active" id="show-login">Sign in</button><button class="tab" id="show-signup">Create account</button></div>
+        <h2 id="auth-title">Welcome back</h2>
+        <p id="auth-subtitle" class="muted">Sign in to continue your portfolio.</p>
+        <form id="auth-form">
+          <label for="email">Email address</label>
+          <input id="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          <label for="password">Password</label>
+          <input id="password" type="password" autocomplete="current-password" minlength="8" placeholder="At least 8 characters" required>
+          <div id="name-field" class="hidden"><label for="student-name">Full name</label><input id="student-name" type="text" placeholder="Your full name"></div>
+          <button id="auth-submit" class="btn btn-primary full" type="submit">Sign in</button>
+          <p id="auth-message" class="message" role="status"></p>
+        </form>
+        <p class="fine-print">Use your own account. Do not share passwords or put private credentials in the project code.</p>
+      </div>
+    </section>
+
+    <section id="app-view" class="app-view hidden">
+      <div class="page-heading">
+        <div><p class="eyebrow">YOUR WORKSPACE</p><h1>Project portfolio</h1><p class="muted">Your changes are stored in your own account when you save.</p></div>
+        <div class="heading-actions"><span id="save-status" class="save-status">Not saved yet</span><button id="save-btn" class="btn btn-primary">Save portfolio</button></div>
+      </div>
+
+      <section class="project-card">
+        <div class="section-heading"><div><p class="eyebrow">PROJECT PROFILE</p><h2>Project details</h2></div><span class="pill">Personal portfolio</span></div>
+        <div class="metadata-grid">
+          <div class="field"><label for="project-title">Project title</label><input id="project-title" data-meta="title" placeholder="Enter your mini-project title"></div>
+          <div class="field"><label for="team">Team name</label><input id="team" data-meta="team" placeholder="Team or group name"></div>
+          <div class="field"><label for="guide">Faculty guide</label><input id="guide" data-meta="guide" placeholder="Guide name"></div>
+          <div class="field"><label for="year">Academic year</label><input id="year" data-meta="year" placeholder="2026–2027"></div>
+          <div class="field"><label for="theme">Theme / domain</label><input id="theme" data-meta="theme" placeholder="Design, energy, mechatronics..."></div>
+          <div class="field"><label for="repo">Repository / evidence link</label><input id="repo" data-meta="repo" type="url" placeholder="https://..."></div>
+          <div class="field span-2"><label for="application">Application</label><textarea id="application" data-meta="application" rows="2" placeholder="Where and how will the project be used?"></textarea></div>
+          <div class="field span-2"><label for="context">Problem context and need</label><textarea id="context" data-meta="context" rows="3" placeholder="Describe the problem and evidence that it matters."></textarea></div>
+          <div class="field span-2"><label for="scope">Project scope and boundaries</label><textarea id="scope" data-meta="scope" rows="2" placeholder="What is included and excluded?"></textarea></div>
+          <div class="field span-2"><label for="members">Team members and roles</label><textarea id="members" data-meta="members" rows="2" placeholder="One per line: Name — role"></textarea></div>
+        </div>
+      </section>
+
+      <div class="workspace-grid">
+        <aside class="stage-sidebar">
+          <div class="sidebar-title"><h2>Project stages</h2><span id="progress-count">0 / 11</span></div>
+          <div id="progress-track" class="progress-track"><div id="progress-fill"></div></div>
+          <nav id="stage-nav" aria-label="Portfolio stages"></nav>
+        </aside>
+        <section class="stage-panel">
+          <div class="stage-panel-top"><span id="stage-number" class="stage-number">STAGE 01</span><select id="stage-status" aria-label="Stage status"><option>Not started</option><option>In progress</option><option>Completed</option><option>Needs review</option></select></div>
+          <h2 id="stage-title">Need definition</h2>
+          <p id="stage-question" class="stage-question"></p>
+          <p class="muted instruction">Answer each prompt using your own project evidence. Add evidence IDs, filenames or links where appropriate. Do not invent calculations or test results.</p>
+          <div id="prompt-fields" class="prompt-fields"></div>
+          <div class="stage-footer"><button id="prev-stage" class="btn btn-secondary">← Previous</button><span id="stage-position" class="muted">1 of 11</span><button id="next-stage" class="btn btn-secondary">Next →</button></div>
+        </section>
+      </div>
+      <div class="bottom-note"><b>Reminder:</b> Save regularly. This first version stores written answers and evidence references; it does not upload files or automatically share your portfolio with faculty.</div>
+    </section>
+  </main>
+  <footer><span>Mechanical Engineering Student Portfolio</span><span>Designed for project documentation</span></footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
